@@ -53,5 +53,8 @@ Windows: `gradlew.bat :app:assembleDebug`. Результат: `app/build/output
 
 ## Веб-версия и iPhone
 
+**[Открыть Есеп в браузере](https://esep-calculator.vercel.app/)** — на iPhone откройте в Safari → Поделиться → На экран «Домой».
+
 В папке [web](web/README.md) находится PWA с теми же восемью калькуляторами, тремя интерфейсами и RU/KK. Работает без базы данных; после первой загрузки доступна офлайн. [Проверки](web/QA.md).
+
 
