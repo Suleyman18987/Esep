@@ -1,0 +1,1 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android"><background android:drawable="@color/esep_icon_prism"/><foreground android:drawable="@drawable/ic_esep_prism"/><monochrome android:drawable="@drawable/ic_esep_monochrome"/></adaptive-icon>

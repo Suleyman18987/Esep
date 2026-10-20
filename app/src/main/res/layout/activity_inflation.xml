@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Экран тақырыбы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Инфляция"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Номиналды табыстылық өрісі -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Номиналды табыстылық (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etNominal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Номиналды табыстылықты енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Инфляция деңгейі өрісі -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Инфляция (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etInflation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Инфляция деңгейін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Нақты табыстылықты есептеу түймесі -->
+        <Button
+            android:id="@+id/btnCalculateReal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Нақты табыстылықты есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Нәтиже үшін мәтін -->
+        <TextView
+            android:id="@+id/tvRealResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Нақты табыстылық: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

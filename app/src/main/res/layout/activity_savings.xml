@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Экран тақырыбы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Жинақтар"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Болашақтағы инвестиция құны -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Инвестицияның болашақтағы құны"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Бастапқы сома (PV)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etPV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Бастапқы соманы енгізіңіз (PV)"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздық мөлшерлеме (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etRateFV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Пайыз мөлшерлемесін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мерзім (жыл)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etYearsFV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мерзімді жылмен енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnCalculateFV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FV есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvFVResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Болашақтағы құн (FV): "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- Ай сайынғы жинақ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ай сайынғы жинақ"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ай сайынғы жарна сомасы (P)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Жарна сомасын енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздық мөлшерлеме (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etRateS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Пайыз мөлшерлемесін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мерзім (жыл)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etYearsS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мерзімді жылмен енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnCalculateS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Жинақты есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvSResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Жинақ сомасы: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

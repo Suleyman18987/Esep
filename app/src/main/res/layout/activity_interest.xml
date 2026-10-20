@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Экран тақырыбы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздар"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Бөлім: Қарапайым пайыздар -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Қарапайым пайыздар"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сома (P)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etP_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="P мәнін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ставка (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etRate_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Пайыздық мөлшерлемені енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мерзімі (жыл)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etTime_simple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мерзімді жылмен енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnCalculateSimple"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Қарапайым пайыздарды есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvSimpleResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздар (I): "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- Бөлім: Құрама пайыздар -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginVertical="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Құрама пайыздар"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сома (P)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etP_compound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="P мәнін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ставка (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etRate_compound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Пайыздық мөлшерлемені енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Жылына есептелу саны (n)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etN_compound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="n мәнін енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мерзімі (жыл)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etTime_compound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мерзімді жылмен енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnCalculateCompound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Құрама пайыздарды есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvCompoundResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Қорытынды сома (A): "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

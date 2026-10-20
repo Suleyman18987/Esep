@@ -1,0 +1,23 @@
+<resources>
+    <style name="Theme.Esep.Light" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#A73C8F</item>
+        <item name="colorSecondary">#A73C8F</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#FFFFFF</item>
+    </style>
+    <style name="Theme.Esep.Mint" parent="Theme.Esep.Light">
+        <item name="colorPrimary">#17645D</item>
+        <item name="colorSecondary">#17645D</item>
+        <item name="android:windowBackground">#F0F8F4</item>
+    </style>
+    <style name="Theme.Esep.Dark" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">#DFF44A</item>
+        <item name="colorSecondary">#DFF44A</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#101113</item>
+    </style>
+    <style name="Theme.FinanceCalc1" parent="Theme.Esep.Light" />
+</resources>

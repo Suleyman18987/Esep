@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Экран тақырыбы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Қаржылық мақсаттар"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Мақсат сомасы өрісі -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мақсат сомасы (₸)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etGoalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мақсат сомасын енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Пайыздық мөлшерлеме (%) өрісі -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздық мөлшерлеме (%)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etGoalRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мөлшерлемені енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Мерзім (жыл) өрісі -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Мерзім (жыл)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etGoalYears"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Мерзімді енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Қажетті соманы есептеу түймесі -->
+        <Button
+            android:id="@+id/btnCalculateGoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Қажетті соманы есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Нәтиже үшін мәтін -->
+        <TextView
+            android:id="@+id/tvGoalResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Қажетті сома: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Экран тақырыбы -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Несие құны"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Несие сомасы (P) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Несие сомасы (P)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etLoanPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Несие сомасын енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Ай сайынғы пайыздық мөлшерлеме -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пайыздық мөлшерлеме (% айына)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etLoanRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Айлық мөлшерлемені енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Төлем саны (n) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Төлем саны (n)"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/etLoanPeriods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Ай санын енгізіңіз"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Аннуитеттік төлемді есептеу түймесі -->
+        <Button
+            android:id="@+id/btnCalculateLoan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Төлемді есептеу"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Нәтижелер -->
+        <TextView
+            android:id="@+id/tvLoanPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Аннуитеттік төлем: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvLoanOverpayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Артық төлем: "
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>
