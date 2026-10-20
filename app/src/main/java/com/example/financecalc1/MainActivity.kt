@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
         render()
+        if (!prefs.getBoolean("welcome_seen", false)) showWelcome()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -540,7 +541,7 @@ class MainActivity : AppCompatActivity() {
         })
         body.add(text(w("Группировка тысяч включена: 1 000 000,50","Мыңдықтар топтастырылады: 1 000 000,50"),12f,palette.muted))
         sectionTitle(body,"О проекте","Жоба туралы")
-        body.add(action(w("Есеп · 2.4    О приложении и авторе","Есеп · 2.4    Қолданба және автор"),{showAbout()},palette.surface,palette.ink).apply {tag="about_project"})
+        body.add(action(w("Есеп · 2.5    О приложении и авторе","Есеп · 2.5    Қолданба және автор"),{showAbout()},palette.surface,palette.ink).apply {tag="about_project"})
         body.add(space(24));scroll.addView(body);root.addView(scroll,LinearLayout.LayoutParams(-1,0,1f))
     }
     private fun launcherArt(id:String)=when(id){"orbit"->R.drawable.ic_esep_orbit;"prism"->R.drawable.ic_esep_prism;else->R.drawable.ic_esep}
@@ -567,8 +568,18 @@ class MainActivity : AppCompatActivity() {
             };icons.addView(cell,LinearLayout.LayoutParams(0,-2,1f).apply {setMargins(dp(3),0,dp(3),0)})
         };body.add(icons)
     }
+    private fun showWelcome()=simpleSheet(w("Добро пожаловать","Қош келдіңіз")){body,dialog->
+        dialog.setOnDismissListener { prefs.edit().putBoolean("welcome_seen",true).apply() }
+        body.add(ImageView(this).apply {setImageResource(launcherArt(interfaceStyle.id));scaleType=ImageView.ScaleType.FIT_CENTER},-1,76)
+        body.add(space(16));body.add(text("Есеп",32f,bold=true).apply {gravity=Gravity.CENTER})
+        body.add(space(12));body.add(text(w("Большие планы начинаются с простого расчёта.","Үлкен жоспар қарапайым есептен басталады."),22f,bold=true).apply {gravity=Gravity.CENTER})
+        body.add(space(18));body.add(text(w("Я создал Есеп, чтобы ежедневные расчёты были проще. Если приложение пригодится, поддержать мои новые проекты можно подпиской.","Күнделікті есептеуді жеңілдету үшін Есепті жасадым. Қолданба пайдалы болса, Instagram-ға жазылып, жаңа жобаларымды қолдай аласыз."),15f,palette.muted).apply {gravity=Gravity.CENTER})
+        body.add(space(22));body.add(action(w("Открыть Instagram","Instagram-ды ашу"),{dialog.dismiss();openProfile("https://www.instagram.com/solomon_19__/")},palette.accent,onAccent).apply {tag="welcome_instagram"})
+        body.add(space(8));body.add(action(w("Продолжить","Жалғастыру"),{dialog.dismiss()},palette.surface,palette.ink).apply {tag="welcome_continue"})
+        body.add(space(16));body.add(text(w("Подписка — по желанию. Все калькуляторы доступны бесплатно.","Жазылу — өз еркіңізде. Барлық есептегіш тегін қолжетімді."),13f,palette.muted).apply {gravity=Gravity.CENTER})
+    }
     private fun showAbout()=simpleSheet(w("О приложении","Қолданба туралы")){body,_->
-        body.add(text("Есеп",30f,bold=true));body.add(space(6));body.add(text(w("Версия 2.4 · Восемь финансовых калькуляторов","2.4 нұсқасы · Сегіз қаржы калькуляторы"),14f,palette.muted));body.add(space(18))
+        body.add(text("Есеп",30f,bold=true));body.add(space(6));body.add(text(w("Версия 2.5 · Восемь финансовых калькуляторов","2.5 нұсқасы · Сегіз қаржы калькуляторы"),14f,palette.muted));body.add(space(18))
         body.add(text(w("Расчёты выполняются на устройстве. Без интернета и аккаунта. История введённых сумм не записывается.","Есептеулер құрылғыда орындалады. Интернет пен тіркелгі қажет емес. Енгізілген сомалар тарихы жазылмайды."),15f))
         sectionTitle(body,"Автор проекта","Жоба авторы")
         body.add(text(w("Мои проекты и новые работы","Менің жобаларым және жаңа жұмыстарым"),14f,palette.muted));body.add(space(12))
