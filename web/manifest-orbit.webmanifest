@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Есеп",
+  "short_name": "Есеп",
+  "description": "Қаржы калькуляторлары · Финансовые калькуляторы",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#F1FAF8",
+  "icons": [
+    {
+      "src": "assets/app-orbit-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/app-orbit-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

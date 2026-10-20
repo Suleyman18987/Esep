@@ -50,3 +50,8 @@ Windows: `gradlew.bat :app:assembleDebug`. Результат: `app/build/output
 [Instagram · @solomon_19__](https://www.instagram.com/solomon_19__/) · [TikTok · @suleyman_0805](https://www.tiktok.com/@suleyman_0805)
 
 Линейные служебные иконки: Lucide, ISC. Лицензия — в `licenses/` и ресурсах приложения. 3D-изображения включены в приложение и не требуют загрузки из сети.
+
+## Веб-версия и iPhone
+
+В папке [web](web/README.md) находится PWA с теми же восемью калькуляторами, тремя интерфейсами и RU/KK. Работает без базы данных; после первой загрузки доступна офлайн. [Проверки](web/QA.md).
+

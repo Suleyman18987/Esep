@@ -1,0 +1,5 @@
+# Established native visual reference
+
+Pinned references: the Есеп 2.4 native screens in ../docs/images/Esep-2.4-families.jpg and Esep-2.4-nine-colors.jpg. Preserve their composition and assets rather than invent a new theme. Wave has a berry/teal/indigo header and waves, category tile tints, outlined fields, result above form and numeric pad. Orbit is mint/teal with actual material icons, filled first field, circular results and dot legends. Prism is charcoal with lavender/ice/lime rectangular results and faceted icons. Palette changes preserve each surface family.
+
+Use native-like 48px touch targets, 20px numeric inputs, tabular numbers, safe areas, dynamic viewport height, reduced motion, neutral pressed states and browser Back. Responsive phone UI is centered at 520px; desktop Wave calculators place the pad beside the form. Formula explanations use an accessible dialog; settings show structural previews and actual icon-color samples. Installed PWA icon changes follow platform constraints and are explained in the chooser.

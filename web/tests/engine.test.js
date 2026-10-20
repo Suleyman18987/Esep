@@ -1,0 +1,21 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {calculate,parse,group,InputProblem,rateFraction} from '../engine.js';
+const val=(id,values,m=0)=>calculate(id,m,values).value;
+const near=(actual,expected)=>assert.ok(Math.abs(actual-expected)<.001,`${actual} != ${expected}`);
+const problem=(id,values,reason,m=0)=>assert.throws(()=>calculate(id,m,values),e=>e instanceof InputProblem&&e.reason===reason);
+test('Budget and deficit preserve signed shares',()=>{near(val('budget',['300000','210000']),90000);const r=calculate('budget',0,['100','150']);near(r.value,-50);near(r.details.reduce((s,x)=>s+x[1],0),-50);});
+test('Annual compound savings',()=>near(val('savings',['100000','10','2']),121000));
+test('Contributions happen at end of each year',()=>near(val('savings',['100000','10','2'],1),210000));
+test('Zero and tiny annual rates remain stable',()=>{near(val('savings',['100000','0','2'],1),200000);near(val('savings',['100000','0,000000000000001','2'],1),200000);});
+test('Simple and monthly compounded interest',()=>{near(val('interest',['100000','10','2']),20000);near(val('interest',['100000','10','2','12'],1),122039.09613756);});
+test('Loan uses a monthly rate',()=>near(val('loan',['1000000','1,5','24']),49924.10196));
+test('Loan is stable at zero and tiny rate',()=>{near(val('loan',['12000','0','12']),1000);near(val('loan',['12000','0,000000000000001','12']),1000);});
+test('Debt ratio may exceed 100 percent',()=>{near(val('debt',['60000','300000']),20);near(val('debt',['150','100']),150);});
+test('Investment includes complete loss',()=>{near(val('investment',['100000','120000']),20);near(val('investment',['100000','0']),-100);});
+test('Inflation difference is approximate and signed',()=>{near(val('inflation',['12','8']),4);near(val('inflation',['-2','8']),-10);});
+test('Goal calculates a lump sum today',()=>near(val('goal',['1000000','10','2']),826446.2809917));
+test('Localized numbers and invalid numeric text',()=>{near(parse('12\u202f345,67'),12345.67);assert.equal(parse('NaN'),null);assert.equal(parse('Infinity'),null);assert.equal(parse(''),null);problem('budget',['1,2,3','10'],'number');problem('budget',['','10'],'required');});
+test('Denominators, integer term and overflow are validated',()=>{problem('debt',['100','0'],'range');problem('investment',['0','100'],'range');problem('loan',['100','1','2,5'],'integer');problem('interest',['100','10','2','0'],'range',1);problem('savings',['100000','1000','1000'],'overflow');});
+test('Grouping preserves decimals, signs and unfinished input',()=>{assert.equal(group('1234567,8900'),'1 234 567,8900');assert.equal(group('-1000.50'),'-1 000.50');assert.equal(group('0,'),'0,');assert.equal(group('-'),'-');assert.equal(group('100000'),'100 000');assert.equal(group('1,2,3'),'1,2,3');});
+
+test('Formula percentages retain small decimal precision',()=>{assert.equal(rateFraction('0,1'),'0,001');assert.equal(rateFraction('0,00000000001'),'0,0000000000001');assert.equal(rateFraction('1 000'),'10');assert.equal(rateFraction('0'),'0');});
